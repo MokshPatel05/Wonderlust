@@ -1,0 +1,175 @@
+<nav class="navbar navbar-expand-md bg-body-light border-bottom sticky-top">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="/listings"><i class="fa-regular fa-compass"></i></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <a class="nav-link" href="/listings">Explore</a>
+      </div>
+
+      <!-- Add new search bar clone here -->
+      <div class="search-bar-container mx-auto">
+        <div class="search-bar-section">
+            <label for="destination">Where</label>
+            <input type="text" id="destination" placeholder="Search destinations">
+        </div>
+        <div class="search-bar-section">
+            <label for="checkin">Check in</label>
+            <input type="text" id="checkin" placeholder="Add dates">
+        </div>
+        <div class="search-bar-section">
+            <label for="checkout">Check out</label>
+            <input type="text" id="checkout" placeholder="Add dates">
+        </div>
+        <div class="search-bar-section">
+            <label for="guests">Who</label>
+            <input type="text" id="guests" placeholder="Add guests">
+        </div>
+        <button class="search-btn">
+            <img src="https://img.icons8.com/material-rounded/24/ffffff/search.png" alt="Search Icon">
+        </button>
+      </div>
+      <!-- End search bar clone -->
+
+      <div class="navbar-nav ms-auto">
+        <a class="nav-link" href="/listings/new">Airbnb your home</a>
+        <% if(!currUser){ %>
+          <a class="nav-link" href="/signup"><b>Sign up</b></a>
+          <a class="nav-link" href="/login"><b>Log in</b></a>
+          <% } %>
+        <% if(currUser){ %>
+          <a class="nav-link" href="/logout"><b>Logout</b></a>
+        <% } %>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- Include the necessary styles for the search bar clone -->
+<style>
+.search-bar-container {
+  display: flex;
+  align-items: center;
+  background-color: white;
+  padding: 5px 10px;
+  border-radius: 50px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  width: 700px; /* Decrease width */
+  height: 56px; 
+
+}
+
+.search-bar-section {
+  display: flex;
+  flex-direction: column;
+  padding: 0 10px; 
+  text-align: left;
+}
+
+.search-bar-section:not(:last-child) {
+  border-right: 1px solid #dddddd;
+}
+
+.search-bar-section label {
+  font-size: 10px; /* Smaller label text */
+  color: #888888;
+  margin-bottom: 2px; /* Reduced space between label and input */
+}
+
+.search-bar-section input {
+  border: none;
+  outline: none;
+  font-size: 12px; /* Slightly smaller input text */
+  color: #333333;
+  background: transparent;
+}
+
+.search-bar-section input::placeholder {
+  color: #888888;
+}
+
+.search-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #FF5A5F;
+  border: none;
+  color: white;
+  border-radius: 50%;
+  padding: 10px;
+  cursor: pointer;
+  margin-left: 10px;
+  height: 40px; /* Reduced button size */
+  width: 40px;
+}
+
+.search-btn img {
+  width: 14px;
+  height: 14px; /* Slightly smaller icon */
+}
+@media (max-width: 992px) {
+    .search-bar-container {
+      width: 750px; /* Reduced width */
+    }
+    .search-bar-section label {
+      font-size: 9px;
+    }
+    .search-bar-section input {
+      font-size: 11px;
+    }
+  }
+
+  /* For smaller devices (max-width: 768px) */
+  @media (max-width: 768px) {
+    .search-bar-container {
+      width: 300px; 
+      left: 0 !important;
+    }
+    .search-bar-section {
+      padding: 0 8px; /* Adjust padding */
+    }
+    .search-bar-section label {
+      font-size: 8px;
+    }
+    .search-bar-section input {
+      font-size: 10px;
+    }
+  }
+
+  /* For very small devices (max-width: 576px) */
+  @media (max-width: 576px) {
+    .search-bar-container {
+      width: 250px; /* Narrower for small screens */
+      padding: 5px 5px; /* Reduced padding */
+    }
+    .search-bar-section {
+      padding: 0 5px; /* Reduce padding between sections */
+    }
+    .search-bar-section label {
+      font-size: 7px;
+    }
+    .search-bar-section input {
+      font-size: 9px;
+    }
+    .search-btn {
+      height: 35px;
+      width: 35px; /* Smaller button */
+    }
+  }
+
+  /* For extra small devices (max-width: 420px) */
+  @media (max-width: 420px) {
+    .search-bar-container {
+      width: 200px; /* Minimized width */
+      padding: 5px 3px; /* Compact padding */
+    }
+    .search-bar-section label {
+      font-size: 6px;
+    }
+    .search-bar-section input {
+      font-size: 8px;
+    }
+  }
+</style>
