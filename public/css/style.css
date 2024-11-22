@@ -21,7 +21,7 @@ body {
   font-size: 2rem;
 }
 .nav-link {
-  color: #222222 !important;
+  color: #222222;
 }
 
 /* footer */
@@ -126,4 +126,20 @@ footer {
 #map {
   height: 40vh;
   width: 80vh;
+}
+
+.addbtn{
+  border: 1px solid black;
+  border-radius: 0.5rem;
+  padding: 0.4rem;
+  background-color: #fe424d;
+  font-weight: 700;
+  font-family: sans-serif;
+  color: #ffffff;
+}
+
+.addbtn:hover{
+  box-shadow: 0 0 10px black;
+  transition: 0.2s;
+  color: #ebebeb;
 }
